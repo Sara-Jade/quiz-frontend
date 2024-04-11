@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+import { QuestionFormComponent } from './questionForm.component';
 
 @Component({
   selector: 'app-root',
-  template: '<questionForm></questionForm><button mat-button>Basic</button>',
-  styleUrl: './app.component.css'
+  template: '<questionForm></questionForm>',
 })
 export class AppComponent {
   title = 'frontend';

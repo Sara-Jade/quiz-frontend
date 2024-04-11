@@ -2,9 +2,9 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'questionForm',
-  template: "Question Form",
+  templateUrl: './questionForm.component.html',
 })
 
 export class QuestionFormComponent {
-  title = "Question";
+
 }
