@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { QuestionFormComponent } from './questionForm.component';
 
 @Component({
   selector: 'app-root',
