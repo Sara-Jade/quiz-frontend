@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Question } from "./question";
 
 @Component({
   selector: 'questionForm',
@@ -7,4 +8,7 @@ import { Component } from "@angular/core";
 
 export class QuestionFormComponent {
 
+  post(question: Question) {
+    console.log(`Question: ${question.text}`);
+  }
 }
