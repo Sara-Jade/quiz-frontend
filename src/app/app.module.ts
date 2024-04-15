@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ApiService } from './api.service';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { QuestionListComponent } from './questionList.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [AppComponent, QuestionFormComponent, QuestionListComponent],
@@ -23,6 +24,7 @@ import { QuestionListComponent } from './questionList.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatListModule,
   ],
   providers: [
     ApiService,
