@@ -15,7 +15,11 @@ export class QuestionFormComponent {
     wrongAnswers: []
   }
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) {
+    this.api.data$.subscribe((data) => {
+      this.question = data;
+    });
+  }
 
   post(question: Question) {
     this.api.postQuestion(question);
