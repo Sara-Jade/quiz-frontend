@@ -11,9 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ApiService } from './api.service';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { QuestionListComponent } from './questionList.component';
 
 @NgModule({
-  declarations: [AppComponent, QuestionFormComponent],
+  declarations: [AppComponent, QuestionFormComponent, QuestionListComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
