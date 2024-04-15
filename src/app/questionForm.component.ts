@@ -22,6 +22,10 @@ export class QuestionFormComponent {
   }
 
   post(question: Question) {
-    this.api.postQuestion(question);
+    this.api.postQuestion(question)
+  }
+
+  put(question: Question) {
+    this.api.putQuestion(question)
   }
 }
