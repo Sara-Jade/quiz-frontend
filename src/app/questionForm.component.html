@@ -1,5 +1,6 @@
 <mat-card>
-  <mat-card-header>New Question</mat-card-header>
+  <mat-card-header *ngIf="!question.id">New Question</mat-card-header>
+  <mat-card-header *ngIf="question.id">Edit Question</mat-card-header>
   <mat-card-content>
     <form>
       <mat-form-field class="fullWidth">

@@ -23,6 +23,5 @@ export class QuestionFormComponent {
 
   post(question: Question) {
     this.api.postQuestion(question);
-    console.log(`Inside questionForm.component.ts.post(). Question should have posted.`)
   }
 }
