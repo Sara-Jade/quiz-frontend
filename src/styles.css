@@ -2,3 +2,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .fullWidth { width: 100%; }
+.mat-mdc-list-item:not(.mat-mdc-list-item-interactive), .mat-mdc-list-option:not(.mat-mdc-list-item-interactive) {cursor: pointer}
+.mdc-list-item__primary-text {
+    color: blue !important
+}
