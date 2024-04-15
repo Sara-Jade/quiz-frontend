@@ -9,6 +9,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { ApiService } from './api.service';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, QuestionFormComponent],
@@ -22,8 +24,10 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
   ],
   providers: [
+    ApiService,
+    provideAnimationsAsync(),
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideHttpClient(withFetch()),
   ],
   bootstrap: [AppComponent]
 })
