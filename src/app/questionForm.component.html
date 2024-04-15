@@ -6,6 +6,22 @@
         <mat-label>Question</mat-label>
         <input [(ngModel)]="question.text" name="question" matInput>
       </mat-form-field>
+      <mat-form-field class="fullWidth">
+        <mat-label>Correct Answer</mat-label>
+        <input [(ngModel)]="question.correctAnswer" name="correctAnswer" matInput>
+      </mat-form-field>
+      <mat-form-field class="fullWidth">
+        <mat-label>Wrong Answer 1</mat-label>
+        <input [(ngModel)]="question.wrongAnswers[0]" name="wrongAnswer1" matInput>
+      </mat-form-field>
+      <mat-form-field class="fullWidth">
+        <mat-label>Wrong Answer 2</mat-label>
+        <input [(ngModel)]="question.wrongAnswers[1]" name="wrongAnswer2" matInput>
+      </mat-form-field>
+      <mat-form-field class="fullWidth">
+        <mat-label>Wrong Answer 3</mat-label>
+        <input [(ngModel)]="question.wrongAnswers[2]" name="wrongAnswer3" matInput>
+      </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions>
