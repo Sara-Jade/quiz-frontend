@@ -13,9 +13,17 @@ import { ApiService } from './api.service';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { QuestionListComponent } from './questionList.component';
 import { MatListModule } from '@angular/material/list';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home.component';
+
+const routes = [
+  {path: '', component: HomeComponent},
+  {path: 'questionForm', component: QuestionFormComponent},
+  {path: 'questionList', component: QuestionListComponent},
+]
 
 @NgModule({
-  declarations: [AppComponent, QuestionFormComponent, QuestionListComponent],
+  declarations: [AppComponent, HomeComponent, QuestionFormComponent, QuestionListComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
@@ -25,6 +33,7 @@ import { MatListModule } from '@angular/material/list';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [
     ApiService,
