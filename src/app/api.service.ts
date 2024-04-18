@@ -15,7 +15,7 @@ export class ApiService {
   }
 
   postQuestion(question: Question) {
-    this.http.post("http://localhost:5167/api/Questions", question)
+    this.http.post("http://localhost:5167/api/Questions", question).subscribe(res => console.log(res))
   }
 
   putQuestion(question: Question) {
