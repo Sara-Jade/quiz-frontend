@@ -15,6 +15,8 @@ import { QuestionListComponent } from './questionList.component';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NavComponent } from './nav.component';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -23,7 +25,7 @@ const routes = [
 ]
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, QuestionFormComponent, QuestionListComponent],
+  declarations: [AppComponent, HomeComponent, NavComponent, QuestionFormComponent, QuestionListComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
@@ -33,6 +35,7 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
+    MatToolbarModule,
     RouterModule.forRoot(routes),
   ],
   providers: [
