@@ -12,7 +12,7 @@ export class QuestionFormComponent {
     id: 0,
     text: "",
     correctAnswer: "",
-    wrongAnswers: []
+    wrongAnswers: new Array<string>()
   }
 
   constructor(private api: ApiService) {

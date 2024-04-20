@@ -17,15 +17,17 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavComponent } from './nav.component';
+import { QuizComponent } from './quiz.component';
 
 const routes = [
   {path: '', component: HomeComponent},
   {path: 'questionForm', component: QuestionFormComponent},
   {path: 'questionList', component: QuestionListComponent},
+  {path: 'quiz', component: QuizComponent},
 ]
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavComponent, QuestionFormComponent, QuestionListComponent],
+  declarations: [AppComponent, HomeComponent, NavComponent, QuestionFormComponent, QuestionListComponent, QuizComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
