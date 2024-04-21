@@ -9,7 +9,7 @@ import { ApiService } from './api.service'
 })
 export class QuizComponent {
     quiz: Quiz = {
-        //id: 0,
+        id: 0,
         title: '',
        // questions: new Array<Question>()
     }

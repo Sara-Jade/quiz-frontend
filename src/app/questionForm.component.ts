@@ -6,7 +6,6 @@ import { ApiService } from "./api.service";
   selector: 'questionForm',
   templateUrl: './questionForm.component.html',
 })
-
 export class QuestionFormComponent {
   question: Question = {
     id: 0,

@@ -6,7 +6,7 @@ import { Quiz } from "./quiz";
 
 @Injectable()
 export class ApiService {
-  private dataSubject = new BehaviorSubject<Question>({id: 0, text: '', correctAnswer: '', wrongAnswers: []});
+  private dataSubject = new BehaviorSubject<Question>({id: 0, text: '', correctAnswer: '', wrongAnswers: new Array<string>()});
   public data$ = this.dataSubject.asObservable();
 
   constructor(private http: HttpClient) {}
