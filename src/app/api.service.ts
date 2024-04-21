@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Question } from "./question";
 import { BehaviorSubject } from "rxjs";
+import { Quiz } from "./quiz";
 
 @Injectable()
 export class ApiService {
@@ -16,6 +17,10 @@ export class ApiService {
 
   postQuestion(question: Question) {
     this.http.post("http://localhost:5167/api/Questions", question).subscribe(res => console.log(res))
+  }
+
+  postQuiz(quiz: Quiz) {
+    this.http.post("http://localhost:5167/api/Quizzes", quiz).subscribe(res => console.log(res))
   }
 
   putQuestion(question: Question) {
