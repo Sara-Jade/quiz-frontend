@@ -1,13 +1,13 @@
 import { Component } from '@angular/core'
 import { Question } from './question'
-import { Quiz } from './quiz'
 import { ApiService } from './api.service'
+import { Quiz } from './quiz'
 
 @Component({
-    selector: 'quiz',
-    templateUrl: './quiz.component.html',
+    selector: 'quizForm',
+    templateUrl: './quizForm.component.html',
 })
-export class QuizComponent {
+export class QuizFormComponent {
     quiz: Quiz = {
         id: 0,
         title: '',
