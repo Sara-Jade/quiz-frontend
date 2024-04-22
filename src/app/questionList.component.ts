@@ -14,12 +14,12 @@ export class QuestionListComponent {
         wrongAnswers: new Array<string>()
     }
 
-    questions: Question[] = [];
+    questions: Question[] = new Array<Question>();
 
     constructor(private api: ApiService) {}
 
-    sendData(question: Question) {     
-        this.api.updateData(question)
+    sendToForm(question: Question) {     
+        this.api.updateForm(question)
     }
 
     ngOnInit() {

@@ -18,16 +18,26 @@ import { HomeComponent } from './home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavComponent } from './nav.component';
 import { QuizFormComponent } from './quizForm.component';
+import { QuizListComponent } from './quizList.component';
 
 const routes = [
   {path: '', component: HomeComponent},
   {path: 'questionForm', component: QuestionFormComponent},
   {path: 'questionList', component: QuestionListComponent},
   {path: 'quizForm', component: QuizFormComponent},
+  {path: 'quizList', component: QuizListComponent},
 ]
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavComponent, QuestionFormComponent, QuestionListComponent, QuizFormComponent],
+  declarations: [
+    AppComponent, 
+    HomeComponent, 
+    NavComponent, 
+    QuestionFormComponent, 
+    QuestionListComponent, 
+    QuizFormComponent, 
+    QuizListComponent
+  ],
   imports: [
     AppRoutingModule,
     BrowserModule,

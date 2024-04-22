@@ -15,6 +15,10 @@ export class ApiService {
     return this.http.get("http://localhost:5167/api/Questions")
   }
 
+  getQuizzes() {
+    return this.http.get("http://localhost:5167/api/Quizzes")
+  }
+
   postQuestion(question: Question) {
     this.http.post("http://localhost:5167/api/Questions", question).subscribe(res => console.log(res))
   }
@@ -27,7 +31,7 @@ export class ApiService {
     this.http.put(`http://localhost:5167/api/Questions/${question.id}`, question).subscribe(res => console.log(res))
   }
 
-  updateData(newData: Question) {
+  updateForm(newData: Question) {
     this.dataSubject.next(newData)
   }
 }
