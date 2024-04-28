@@ -27,7 +27,12 @@
   </mat-card-content>
   <mat-card-actions>
     <button *ngIf="question.id" (click)="put(question)" mat-button>Edit</button>
-    <button *ngIf="question.id" (click)="question = {id: 0, text: '', correctAnswer: '', wrongAnswers: ['','','']}" mat-button>New</button>
+    <button 
+      *ngIf="question.id" 
+      (click)="question = {id: 0, text: '', correctAnswer: '', wrongAnswers: ['','',''], quizId: 0}" 
+      mat-button
+    >New</button>
     <button *ngIf="!question.id" (click)="post(question)" mat-button>Post</button>
   </mat-card-actions>
 </mat-card>
+<questionList></questionList>

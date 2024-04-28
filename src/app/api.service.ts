@@ -6,7 +6,9 @@ import { Quiz } from "./quiz";
 
 @Injectable()
 export class ApiService {
-  private dataSubject = new BehaviorSubject<Question>({id: 0, text: '', correctAnswer: '', wrongAnswers: new Array<string>()});
+  private dataSubject = new BehaviorSubject<Question>({
+    id: 0, text: '', correctAnswer: '', wrongAnswers: new Array<string>(), quizId: 0,
+  });
   public data$ = this.dataSubject.asObservable();
   private quizSubject = new BehaviorSubject<Quiz>({id: 0, title: ''})
   public quiz$ = this.quizSubject.asObservable();
@@ -42,7 +44,6 @@ export class ApiService {
   }
 
   updateQuizForm(newQuiz: Quiz) {
-    console.log('Inside api.service.updateQuizForm()')
     this.quizSubject.next(newQuiz)
   }
 }

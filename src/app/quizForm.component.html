@@ -12,6 +12,7 @@
     <mat-card-actions>
         <button *ngIf="quiz.id" (click)="put(quiz)" mat-button>Edit</button>
         <button *ngIf="quiz.id" (click)="this.quiz = {id: 0, title: ''}" mat-button>New</button>
+        <button *ngIf="quiz.id" [routerLink]="['/questionForm', quiz.id]" mat-button>Edit Questions</button>
         <button *ngIf="!quiz.id" (click)="post(quiz)" mat-button>Post</button>
     </mat-card-actions>
 </mat-card>

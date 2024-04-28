@@ -3,4 +3,5 @@ export interface Question {
     text: string;
     correctAnswer: string;
     wrongAnswers: string[];
+    quizId: number;
 }

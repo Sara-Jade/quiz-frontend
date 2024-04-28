@@ -11,7 +11,8 @@ export class QuestionListComponent {
         id: 0,
         text: '',
         correctAnswer: '',
-        wrongAnswers: new Array<string>()
+        wrongAnswers: new Array<string>(),
+        quizId: 0,
     }
 
     questions: Question[] = new Array<Question>();
