@@ -11,12 +11,17 @@ export class QuizFormComponent {
     quiz: Quiz = {
         id: 0,
         title: '',
-       // questions: new Array<Question>()
     }
 
-    constructor(private api: ApiService) { }
+    constructor(private api: ApiService) { 
+        this.api.quiz$.subscribe(newQuiz => this.quiz = newQuiz)
+    }
 
     post(quiz: Quiz) {
         this.api.postQuiz(quiz)
+    }
+
+    put(quiz: Quiz) {
+        this.api.putQuiz(quiz)
     }
 }

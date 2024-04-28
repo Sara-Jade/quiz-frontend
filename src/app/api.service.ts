@@ -8,6 +8,8 @@ import { Quiz } from "./quiz";
 export class ApiService {
   private dataSubject = new BehaviorSubject<Question>({id: 0, text: '', correctAnswer: '', wrongAnswers: new Array<string>()});
   public data$ = this.dataSubject.asObservable();
+  private quizSubject = new BehaviorSubject<Quiz>({id: 0, title: ''})
+  public quiz$ = this.quizSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -31,7 +33,16 @@ export class ApiService {
     this.http.put(`http://localhost:5167/api/Questions/${question.id}`, question).subscribe(res => console.log(res))
   }
 
+  putQuiz(quiz: Quiz) {
+    this.http.put(`http://localhost:5167/api/Quizzes/${quiz.id}` , quiz).subscribe(res => console.log(res))
+  }
+
   updateForm(newData: Question) {
     this.dataSubject.next(newData)
+  }
+
+  updateQuizForm(newQuiz: Quiz) {
+    console.log('Inside api.service.updateQuizForm()')
+    this.quizSubject.next(newQuiz)
   }
 }

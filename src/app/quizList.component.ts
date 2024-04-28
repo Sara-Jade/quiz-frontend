@@ -16,14 +16,15 @@ export class QuizListComponent {
 
     constructor(private api: ApiService) {}
 
-    // sendToForm(quiz: Quiz) {     
-    //     this.api.updateForm(quiz)
-    // }
-
     ngOnInit() {
         return this.api.getQuizzes()
             .subscribe(res => {
                 this.quizzes = res as Quiz[]
             });
+    }
+
+    sendToQuizForm(quiz: Quiz) {     
+        // console.log('Inside sendtoQuizForm() in quizList.ts')
+        this.api.updateQuizForm(quiz)
     }
 }
