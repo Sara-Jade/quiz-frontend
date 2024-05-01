@@ -7,6 +7,8 @@ import { Question } from "./question";
     templateUrl: './questionList.component.html',
 })
 export class QuestionListComponent {
+    quizId: number = 0;
+
     question: Question = {
         id: 0,
         text: '',
@@ -14,7 +16,6 @@ export class QuestionListComponent {
         wrongAnswers: new Array<string>(),
         quizId: 0,
     }
-
     questions: Question[] = new Array<Question>();
 
     constructor(private api: ApiService) {}
@@ -24,9 +25,7 @@ export class QuestionListComponent {
     }
 
     ngOnInit() {
-        return this.api.getQuestions()
-            .subscribe(res => {
-                this.questions = res as Question[]
-            });
+        this.api.quizId$.subscribe((quizId) => { this.quizId = quizId; });
+        return this.api.getQuestionsOfAQuiz(this.quizId).subscribe(res => { this.questions = res as Question[] });
     }
 }

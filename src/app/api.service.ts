@@ -12,11 +12,17 @@ export class ApiService {
   public data$ = this.dataSubject.asObservable();
   private quizSubject = new BehaviorSubject<Quiz>({id: 0, title: ''})
   public quiz$ = this.quizSubject.asObservable();
+  private quizIdSubject = new BehaviorSubject<number>(0)
+  public quizId$ = this.quizIdSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
   getQuestions() {
     return this.http.get("http://localhost:5167/api/Questions")
+  }
+
+  getQuestionsOfAQuiz(quizId: number) {
+    return this.http.get(`http://localhost:5167/api/Questions/${quizId}`)
   }
 
   getQuizzes() {
@@ -36,11 +42,15 @@ export class ApiService {
   }
 
   putQuiz(quiz: Quiz) {
-    this.http.put(`http://localhost:5167/api/Quizzes/${quiz.id}` , quiz).subscribe(res => console.log(res))
+    this.http.put(`http://localhost:5167/api/Quizzes/${quiz.id}`, quiz).subscribe(res => console.log(res))
   }
 
   updateForm(newData: Question) {
     this.dataSubject.next(newData)
+  }
+
+  updateQuestionListByQuizId(newQuizId: number) {
+    this.quizIdSubject.next(newQuizId)
   }
 
   updateQuizForm(newQuiz: Quiz) {

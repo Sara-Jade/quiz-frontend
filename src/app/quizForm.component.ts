@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import { Question } from './question'
 import { ApiService } from './api.service'
 import { Quiz } from './quiz'
 
@@ -23,5 +22,9 @@ export class QuizFormComponent {
 
     put(quiz: Quiz) {
         this.api.putQuiz(quiz)
+    }
+
+    sendToQuestionList(quiz: Quiz) {
+        this.api.updateQuestionListByQuizId(quiz.id)
     }
 }
