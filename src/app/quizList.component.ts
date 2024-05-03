@@ -23,8 +23,7 @@ export class QuizListComponent {
             });
     }
 
-    sendToQuizForm(quiz: Quiz) {     
-        // console.log('Inside sendtoQuizForm() in quizList.ts')
+    sendToQuizForm(quiz: Quiz) {
         this.api.updateQuizForm(quiz)
     }
 }
