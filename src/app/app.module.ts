@@ -19,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavComponent } from './nav.component';
 import { QuizFormComponent } from './quizForm.component';
 import { QuizListComponent } from './quizList.component';
+import { LoginComponent } from './login.component';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -27,6 +28,7 @@ const routes = [
   {path: 'questionList', component: QuestionListComponent},
   {path: 'quizForm', component: QuizFormComponent},
   {path: 'quizList', component: QuizListComponent},
+  {path: 'login', component: LoginComponent},
 ]
 
 @NgModule({
@@ -37,7 +39,8 @@ const routes = [
     QuestionFormComponent, 
     QuestionListComponent, 
     QuizFormComponent, 
-    QuizListComponent
+    QuizListComponent,
+    LoginComponent,
   ],
   imports: [
     AppRoutingModule,

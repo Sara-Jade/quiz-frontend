@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Question } from "./question";
 import { BehaviorSubject } from "rxjs";
 import { Quiz } from "./quiz";
+import { Credentials } from "./credentials";
 
 @Injectable()
 export class ApiService {
@@ -27,6 +28,10 @@ export class ApiService {
 
   getQuizzes() {
     return this.http.get("http://localhost:5167/api/Quizzes")
+  }
+
+  postCredentials(credentials: Credentials) {
+    this.http.post('http://localhost:5167/api/Account', credentials).subscribe(res => console.log(res.toString()))
   }
 
   postQuestion(question: Question) {
