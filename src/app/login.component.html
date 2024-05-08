@@ -1,16 +1,16 @@
 <mat-card>
     <mat-card-header>Login</mat-card-header>
     <mat-card-content>
-        <form>
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
             <mat-form-field class="fullWidth">
                 <mat-label>Email</mat-label>
-                <input [(ngModel)]="credentials.email" type="email" name="email" matInput>
+                <input type="email" formControlName="email" matInput>
             </mat-form-field>
             <mat-form-field class="fullWidth">
                 <mat-label>Password</mat-label>
-                <input [(ngModel)]="credentials.password" type="password" name="password" matInput>
+                <input type="password" formControlName="password" matInput>
             </mat-form-field>
-            <button (click)="post(credentials)" mat-raised-button color="primary">Login</button>
+            <button mat-raised-button color="primary" [disabled]="!form.valid">Login</button>
         </form>
     </mat-card-content>
 </mat-card>

@@ -3,7 +3,6 @@ import { HttpClient } from "@angular/common/http";
 import { Question } from "./question";
 import { BehaviorSubject } from "rxjs";
 import { Quiz } from "./quiz";
-import { Credentials } from "./credentials";
 
 @Injectable()
 export class ApiService {
@@ -30,7 +29,7 @@ export class ApiService {
     return this.http.get("http://localhost:5167/api/Quizzes")
   }
 
-  postCredentials(credentials: Credentials) {
+  postCredentials(credentials: Partial<{ email: string | null; password: string | null; }>) {
     this.http.post('http://localhost:5167/api/Account', credentials).subscribe(res => console.log(res.toString()))
   }
 

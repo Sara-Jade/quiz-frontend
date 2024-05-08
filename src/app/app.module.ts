@@ -7,7 +7,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ApiService } from './api.service';
 import { provideHttpClient, withFetch } from '@angular/common/http';
@@ -52,6 +52,7 @@ const routes = [
     MatInputModule,
     MatListModule,
     MatToolbarModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],
   providers: [

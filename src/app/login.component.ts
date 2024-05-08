@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { Credentials } from "./credentials";
 import { ApiService } from "./api.service";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component ({
     selector: 'login',
@@ -8,14 +8,20 @@ import { ApiService } from "./api.service";
 })
 
 export class LoginComponent {
-    credentials: Credentials = {
-        email: '',
-        password: '',
+    form: FormGroup<{
+        email: FormControl<string | null>;
+        password: FormControl<string | null>;
+    }>
+
+    constructor(private api: ApiService, private fb: FormBuilder) {
+        this.form = fb.group({
+            email: ['', [Validators.required, Validators.email]],
+            password: ['', [Validators.required, Validators.minLength(16)]]
+        })
     }
 
-    constructor(private api: ApiService) {}
-
-    post(credentials: Credentials) {
-        this.api.postCredentials(credentials)
+    onSubmit(form: FormGroup<{ email: FormControl<string | null>; password: FormControl<string | null>; }>) {
+        this.api.postCredentials(form.value)
+        console.log(this.form)
     }
 }
