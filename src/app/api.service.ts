@@ -29,10 +29,6 @@ export class ApiService {
     return this.http.get("http://localhost:5167/api/Quizzes")
   }
 
-  postCredentials(credentials: Partial<{ email: string | null; password: string | null; }>) {
-    this.http.post('http://localhost:5167/api/Account', credentials).subscribe(res => console.log(res.toString()))
-  }
-
   postQuestion(question: Question) {
     this.http.post("http://localhost:5167/api/Questions", question).subscribe(res => console.log(res))
   }

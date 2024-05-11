@@ -20,6 +20,7 @@ import { NavComponent } from './nav.component';
 import { QuizFormComponent } from './quizForm.component';
 import { QuizListComponent } from './quizList.component';
 import { LoginComponent } from './login.component';
+import { AuthService  } from './auth.service';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -57,6 +58,7 @@ const routes = [
   ],
   providers: [
     ApiService,
+    AuthService,
     provideAnimationsAsync(),
     provideClientHydration(),
     provideHttpClient(withFetch()),
