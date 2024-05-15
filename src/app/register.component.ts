@@ -4,11 +4,11 @@ import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms"
 import { AuthService } from "./auth.service";
 
 @Component ({
-    selector: 'login',
-    templateUrl: './login.component.html',
+    selector: 'register',
+    templateUrl: './register.component.html',
 })
 
-export class LoginComponent {
+export class RegisterComponent {
     credentials: FormGroup<{
         email: FormControl<string | null>;
         password: FormControl<string | null>;
