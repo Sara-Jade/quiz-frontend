@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ApiService } from './api.service';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { QuestionListComponent } from './questionList.component';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
@@ -21,6 +21,7 @@ import { QuizFormComponent } from './quizForm.component';
 import { QuizListComponent } from './quizList.component';
 import { RegisterComponent } from './register.component';
 import { AuthService  } from './auth.service';
+import { AuthInterceptor } from './auth.interceptor';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -61,7 +62,7 @@ const routes = [
     AuthService,
     provideAnimationsAsync(),
     provideClientHydration(),
-    provideHttpClient(withFetch()),
+    provideHttpClient(withFetch(), withInterceptors([AuthInterceptor])),
   ],
   bootstrap: [AppComponent]
 })

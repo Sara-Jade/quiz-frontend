@@ -23,9 +23,6 @@ export class QuestionFormComponent {
 
     this.quizId = this.route.snapshot.paramMap.get('quizId')
     if (this.quizId) this.question.quizId = +this.quizId
-
-    console.log('End of questionForm constructor')
-    console.log(`this.question.quizId: ${this.question.quizId}`)
   }
 
   post(question: Question) {

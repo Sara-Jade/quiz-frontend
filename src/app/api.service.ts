@@ -18,15 +18,18 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getQuestions() {
-    return this.http.get("http://localhost:5167/api/Questions")
+    const res = this.http.get("http://localhost:5167/api/Questions")
+    return res
   }
 
   getQuestionsOfAQuiz(quizId: number) {
-    return this.http.get(`http://localhost:5167/api/Questions/${quizId}`)
+    const res = this.http.get(`http://localhost:5167/api/Questions/${quizId}`)
+    return res
   }
 
   getQuizzes() {
-    return this.http.get("http://localhost:5167/api/Quizzes")
+    const res = this.http.get("http://localhost:5167/api/Quizzes")
+    return res
   }
 
   postQuestion(question: Question) {
