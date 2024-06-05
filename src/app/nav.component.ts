@@ -9,6 +9,7 @@ import {Component} from '@angular/core'
             <button mat-button routerLink="/questionForm">QuestionForm</button>
             <span style="flex: 1 1 auto;"></span>
             <button mat-button routerLink="/register">New account</button>
+            <button mat-button routerLink="/login">Login</button>
         </mat-toolbar>
     `,
 })

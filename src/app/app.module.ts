@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ApiService } from './api.service';
-import { HTTP_INTERCEPTORS, provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { QuestionListComponent } from './questionList.component';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
@@ -22,9 +22,11 @@ import { QuizListComponent } from './quizList.component';
 import { RegisterComponent } from './register.component';
 import { AuthService  } from './auth.service';
 import { AuthInterceptor } from './auth.interceptor';
+import { LoginComponent } from './login.component';
 
 const routes = [
   {path: '', component: HomeComponent},
+  {path: "login", component: LoginComponent},
   {path: 'questionForm', component: QuestionFormComponent},
   {path: 'questionForm/:quizId', component: QuestionFormComponent},
   {path: 'questionList', component: QuestionListComponent},
@@ -36,7 +38,8 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent, 
-    HomeComponent, 
+    HomeComponent,
+    LoginComponent,
     NavComponent, 
     QuestionFormComponent, 
     QuestionListComponent, 
