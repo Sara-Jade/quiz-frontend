@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +26,7 @@ import { LoginComponent } from './login.component';
 
 const routes = [
   {path: '', component: HomeComponent},
-  {path: "login", component: LoginComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'questionForm', component: QuestionFormComponent},
   {path: 'questionForm/:quizId', component: QuestionFormComponent},
   {path: 'questionList', component: QuestionListComponent},

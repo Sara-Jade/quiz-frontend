@@ -2,7 +2,6 @@ import { DOCUMENT } from '@angular/common';
 import { HttpInterceptorFn, HttpRequest } from '@angular/common/http';
 import { inject } from '@angular/core';
 
-//@Injectable
 export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
   const document = inject(DOCUMENT);
   const storage = document.defaultView?.localStorage;

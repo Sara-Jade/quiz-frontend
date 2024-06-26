@@ -17,6 +17,8 @@ export class AuthService {
             this.res = res as any;
             localStorage.setItem(this.res.key, this.res.value)
         })
+
+        this.router.navigate(['/'])
     }
 
     postLogin(credentials: Partial<{ email: string | null; password: string | null; }>) {
